@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+@font-face {
+    font-family: 'classy';
+    src: url('../font/classy_vogue/Classyvogueregular.ttf');
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.header-search{
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 5%;
+}
+
+body{
+    background-color: #f9fbfc;
+}
+
+.sc-bg-ats{
+    width: 100%;
+    height: fit-content;
+    padding: 0 10px;
+    background : linear-gradient(66deg, #e6fbfe 0%, #edddfb 100%);
+}
+
+.area-sf{
+    width: 100%;
+}
+
+.search{
+    width: 50%;
+    height: 60px;
+    padding: 0px 1% 0px 0px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 8px #ededed;
+    background-color: #fff;
+    transform: translateY(50%);
+}
+
+.search button{
+    width: fit-content;
+    height: 100%;
+    padding-left: 3%;
+    padding-right: 3%;
+    margin-bottom: 0px !important;
+    cursor: text;
+    background-color: rgba(230, 251, 254, 0);
+    border: none;
+    outline: none;
+}
+
+.search button img{
+    height: 30%;
+    aspect-ratio: 1/1;
+}
+
+.search input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+}
+
+.reset-search{
+    height: 100%;
+    aspect-ratio: 1/1.5;
+    width: fit-content;
+    padding: 0px 2%;
+}
+
+#reset-search{
+    height: 35%;
+    aspect-ratio: 1/1;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    display: none;
+    outline: none;
+    align-items: center;
+}
+
+#reset-search img{
+    height: 100%;
+    width: 100%;
+}
+
+.area-buku{
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;   
+    display: flex;
+    justify-content: center;
+}
+
+.inner-area-buku{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.box-buku{
+    width: 20%;
+}
+
+.box-buku img{
+    border-radius: 8px;
+    width: 100%;
+    aspect-ratio: 3/4;
+}
+
+.box-buku h1{
+    font-size: 15px;
+}
+
+.area-penulis p{
+    margin-bottom: 0px !important;
+    padding: 0px !important;
+}
+
+.bookmark{
+    padding: 0px !important;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.bookmark img{
+    width: 13px;
+    height: 13px;
+    border-radius: 0px;
+    aspect-ratio: 1/1;
+}
+
+.bookmark p{
+    margin-bottom: 0px !important;
+    font-size: 12px;
+    color: #5a5a5a;
+}
+
+.area-cover{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.area-cover img{
+    height: fit-content;
+    aspect-ratio: 3/4;
+    object-fit: contain;
+    padding: 0px !important;
+}
+
+.judul-buku{
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.judul-buku h1{
+    font-family: 'classy';
+    font-size: 55px;
+    line-height: 1.5;
+}
+
+.judul-buku h6{
+    font-size: 20px;
+    color: #5a5a5a;
+    font-family: "Jost", sans-serif;
+}
+
+.judul-buku p{
+    color: #7d7d7d;
+}
+
+.action-buku{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.action-buku a{
+    padding: 8px 20px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    background-color: #146ef5;
+    border-radius: 7px;
+    color: #fff;
+}
+
+.action-buku a img{
+    height: 20px;
+    width: 20px;
+    box-shadow: none;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    margin-left: 10px;
+    position: static;
+}
+
+.action-btn-buku{
+    padding: 12px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #efefef;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+    margin: 0px 8px;
+}
+
+.action-btn-buku img{
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
+}
+
+.deskripsi-buku h6{
+    color: #313131;
+    font-family: 'classy';
+}
