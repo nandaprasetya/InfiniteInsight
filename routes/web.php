@@ -25,21 +25,31 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/kategori', KategoriController::class);
-Route::middleware(['auth:web'])->group(function(){
-    Route::resource('/dashboard', UserController::class);
+// User
+Route::middleware(['auth:web', 'user-access:user'])->group(function(){
     Route::resource('/buku', BukuController::class);
+    Route::resource('/dashboard', UserController::class);
+    Route::resource('/kategori', KategoriController::class);
     Route::get('/search', [BukuController::class, 'search'])->name('search');
+    Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 });
-Route::get('/register', [UserController::class, 'registerpage'])->name('registerpage');
-Route::post('/register', [UserController::class, 'register'])->name('register');
-Route::get('/login', [UserController::class, 'loginpage'])->name('loginpage');
-Route::post('/login', [UserController::class, 'login'])->name('login');
-Route::post('/logout', [UserController::class, 'logout'])->name('logout');
+
+// Guest
+Route::middleware(['guest'])->group(function (){
+    Route::get('/register', [UserController::class, 'registerpage'])->name('registerpage');
+    Route::post('/register', [UserController::class, 'register'])->name('register');
+    Route::get('/login', [UserController::class, 'loginpage'])->name('loginpage');
+    Route::post('/login', [UserController::class, 'login'])->name('login');
+    Route::prefix('admin')->group(function (){
+        Route::get('/login', [AdminController::class, 'loginpage'])->name('admin.login.page');
+        Route::post('/login', [AdminController::class, 'login'])->name('admin.login');
+    });
+});
+
+// Admin
 Route::prefix('admin')->group(function () {
-    Route::get('/login', [AdminController::class, 'loginpage'])->name('admin.login.page');
-    Route::post('/login', [AdminController::class, 'login'])->name('admin.login');
-    Route::middleware(['auth','admin'])->group(function () {
-            Route::resource('/', AdminController::class);
+    Route::middleware(['user-access:admin'])->group(function () {
+        Route::get('/', [AdminController::class, 'index']);
+        Route::get('/logout', [AdminController::class, 'logout'])->name('admin.logout');
     });
 });
