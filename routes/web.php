@@ -30,6 +30,10 @@ Route::middleware(['auth:web'])->group(function(){
     Route::resource('/dashboard', UserController::class);
     Route::resource('/buku', BukuController::class);
     Route::get('/search', [BukuController::class, 'search'])->name('search');
+    Route::get('/buku/{buku}/peminjaman', [BukuController::class, 'peminjamanform'])->name('peminjamanform');
+    Route::post('/buku/{id}/peminjaman', [BukuController::class, 'peminjaman'])->name('peminjaman');
+    Route::get('/uprole', [UserController::class, 'uprolepage'])->name('uprolepage');
+    Route::post('/uprole', [UserController::class, 'uprole'])->name('uprole');
 });
 Route::get('/register', [UserController::class, 'registerpage'])->name('registerpage');
 Route::post('/register', [UserController::class, 'register'])->name('register');

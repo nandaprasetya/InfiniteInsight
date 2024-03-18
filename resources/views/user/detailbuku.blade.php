@@ -13,9 +13,15 @@
                 <p class="mb-4">{{$buku->deskripsi}}</p>
                 <!-- <h6 class="mb-4">{{$buku->penulis}}</h6> -->
                 <div class="action-buku">
-                    <a href="">Start reading
+                    @if(auth()->user()->role == 'Gold')
+                    <a href="{{ route('peminjamanform', $buku->id)}}">Start reading
                         <img src="{{asset('asset/up-right-arrow.png')}}" alt="">
                     </a>
+                    @elseif(auth()->user()->role == 'user')
+                    <a href="{{ route('peminjamanform', $buku->id)}}">Up reading
+                        <img src="{{asset('asset/up-right-arrow.png')}}" alt="">
+                    </a>
+                    @endif
                     <div class="area-action-buku d-flex">
                         <div id="bookmark-btn" class="action-btn-buku d-flex justify-content-center align-items-center">
                             <img src="{{asset('asset/bookmark-buku.png')}}" alt="">

@@ -21,6 +21,9 @@ return new class extends Migration
             $table->text('deskripsi');
             $table->string('cover');
             $table->string('halaman');
+            $table->string('bahasa');
+            $table->string('file');
+            $table->string('tipe_peminjaman')->default('baca');
         });
     }
 

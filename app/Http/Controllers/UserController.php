@@ -40,9 +40,8 @@ class UserController extends Controller
             $path = $image->storeAs('public/storage/user', $filename);
             $item->foto = $filename;
         }
-        // dd($item);
         $item->save();
-        return view('user.login');
+        return route('loginpage');
     }
 
     public function loginpage(){
@@ -69,5 +68,17 @@ class UserController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         return redirect('/');
+    }
+
+    public function uprolepage(){
+        return view('user.uprole');
+    }
+    
+    public function uprole(){
+        $iduser = Auth::id();
+        $user = User::find($iduser);
+        $user->role = 'Gold';
+        $user->save();
+        return redirect(route('buku.index'));
     }
 }

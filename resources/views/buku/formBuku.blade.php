@@ -13,6 +13,7 @@
         <input type="text" @if($pagetype == 'patch') value="{{$field->penerbit}}" @endif name="penerbit" placeholder="penerbit">
         <input type="date" @if($pagetype == 'patch') value="{{$field->tahun_terbit}}" @endif name="tahun_terbit" id="">
         <input type="text" @if($pagetype == 'patch') value="{{$field->deskripsi}}" @endif name="deskripsi" placeholder="deskripsi">
+        <input type="text" @if($pagetype == 'patch') value="{{$field->bahasa}}" @endif name="bahasa" placeholder="bahasa">
         <div class="form-group">
             <select name="kategori[]" style="width:300px;" multiple="multiple" class="select2 select2bs4" data-placeholder="Select a State" data-dropdown-css-class="select2-purple">
                 @foreach($items as $item)
@@ -22,6 +23,7 @@
         </div>
         <input type="file" @if($pagetype == 'patch') value="{{$field->cover}}" @endif name="cover" id="">
         <input @if($pagetype == 'patch') value="{{$field->halaman}}" @endif type="number" name="halaman" id="">
+        <input type="file" @if($pagetype == 'patch') value="{{$field->file}}" @endif name="file" id="">
         <input type="submit" value="KIRIM">
     </form>
 @endsection
